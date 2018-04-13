@@ -1,6 +1,6 @@
 import React from 'react'
 import ProfileInfo from 'components/account/ProfileInfo'
-import ScoreTable from 'components/account/ScoreTable'
+import ScoreTable from 'containers/account/ScoreTable'
 import Share from 'components/account/Share'
 import Button from 'components/Button'
 
