@@ -5,7 +5,7 @@ import { BrowserRouter,
          Link }         from 'react-router-dom'
 import AccountView from 'components/account/AccountView'
 import SuccessfulllySharedView from 'components/account/SuccessfullySharedView'
-import RateUserView from 'components/rate-user/RateUserView'
+import RateUserView from 'containers/rate-user/RateUserView'
 import SuccessfulllyRatedView from 'components/rate-user/SuccessfullyRatedView'
 
 const Routing = () => {
