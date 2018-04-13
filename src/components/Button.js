@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Button = () => (
-  <button>
-    This is button
-  </button>
+  pug`
+    .button Button Label
+  `
 )
 
 export default Button

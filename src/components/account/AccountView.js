@@ -7,12 +7,14 @@ import Button from 'components/Button'
 
 const AccountView = () => {
   return pug`
-    .row
-      .col-xs-12
+    .fit-parent.column
+      .column-body.overflow-scroll
         .box
           ProfileInfo
           ScoreTable
           Share
+      .column-footer
+        .box
           Button
   `
 }
