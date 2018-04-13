@@ -13,7 +13,8 @@
 
 .profile-info-progressbar{
   position: relative;
-  height: size(3);
+  height: size(2);
+  margin-bottom: size(1);
   &:before,
   &:after{
     content: '';
@@ -29,4 +30,8 @@
     background-color: $color-accent;
     right: 37%;
   }
+}
+
+.profile-info-progressbar-hint{
+  color: $color-gray-5
 }

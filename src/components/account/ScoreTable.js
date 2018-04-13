@@ -7,6 +7,7 @@ const ScoreTable = ({
     onIncreaseRating,
     onDecreaseRating}) => (
   <div>
+    <span>Your score:</span>
     <div className="score-table">
       {userRatingsList.map((rating, index) => (
         <ScoretableRow
