@@ -12,7 +12,7 @@ const SuccessfullyRatedView = ({emoji, onClick}) => (
       .column-footer
         .side-padding
           Button(
-            label='OK'
+            label='close'
             onClick=${onClick}
             )
 

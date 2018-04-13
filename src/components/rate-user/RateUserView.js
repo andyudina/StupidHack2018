@@ -3,8 +3,14 @@ import { withRouter } from "react-router-dom";
 import ScoreAction from 'components/rate-user/ScoreAction'
 
 const RateUserView = ({history, increaseRating, decreaseRating}) => {
-  let redirectToSuccessView = () => {
-    history.push('rate-success')
+  let redirectToSuccessView = (emoji, copy) => {
+    history.push({
+      pathname: '/rate-success',
+      state: {
+        emoji: emoji,
+        copy:  copy
+      }
+    })
   }
   return pug`
     .row.column.fit-parent.confirmation-content
@@ -12,11 +18,14 @@ const RateUserView = ({history, increaseRating, decreaseRating}) => {
         h5.rate-title Yep, that guy is vegan. Would you give:
         .rate-button.rate-medal
           ScoreAction(
-            label='🎖️'
+            label='🎖'
             onClick=${
             () => {
               increaseRating();
-              redirectToSuccessView();
+              redirectToSuccessView(
+                '🎖',
+                'And off your medal goes'
+                );
             }})
         h6.rate-or or
         .rate-button.rate-bacon
@@ -25,7 +34,10 @@ const RateUserView = ({history, increaseRating, decreaseRating}) => {
             onClick=${
             () => {
               decreaseRating();
-              redirectToSuccessView();
+              redirectToSuccessView(
+                '🥓',
+                'You know you\'re an awful person, right?'
+                );
             }})
   `
 }
