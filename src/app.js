@@ -2,9 +2,10 @@
 
 import React    from 'react';
 import ReactDOM from 'react-dom';
+import Routing  from 'components/routing'
 
 ReactDOM.render((
-  <h1>Hello World</h1>
+  <Routing />
   ),
   document.querySelector('#root')
 )
