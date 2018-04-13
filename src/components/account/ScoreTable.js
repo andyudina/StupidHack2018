@@ -7,12 +7,15 @@ const ScoreTable = ({
     onIncreaseRating,
     onDecreaseRating}) => (
   <div>
-    {userRatingsList.map((rating, index) => (
-      <ScoretableRow
-        key={index}
-        {...rating}
-        />
-    ))}
+    <div className="score-table">
+      {userRatingsList.map((rating, index) => (
+        <ScoretableRow
+          key={index}
+          {...rating}
+          />
+      ))}
+    </div>
+
     <button onClick={onIncreaseRating}>
       Increase rating
     </button>
