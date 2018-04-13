@@ -2,19 +2,23 @@
 let othersRating = [
   {
     'name': 'true vegan',
-    'rating': 9002
+    'rating': 9002,
+    'isMe': false
   },
   {
     'name': 'That chick',
-    'rating': 9001
+    'rating': 9001,
+    'isMe': false
   },
   {
     'name': 'That guy',
-    'rating': 8999
+    'rating': 8999,
+    'isMe': false
   },
   {
     'name': 'some other guy',
-    'rating': 8998
+    'rating': 8998,
+    'isMe': false
   }
 ]
 
@@ -23,7 +27,8 @@ let myDefaultRating = 9000
 const getratedUserList = (othersRating, myRating) => {
   let myUser = {
     'name': 'ME',
-    'rating': myRating
+    'rating': myRating,
+    'isMe': true
   }
   let usersList = []
   let othersRatingSorted = othersRating.sort(

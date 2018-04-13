@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ScoretableRow = ({ name, rating }) => (
+const ScoretableRow = ({ name, rating, isMe }) => (
   pug`
     .score-table-row-wrapper
       .row.score-table-row.middle-xs
