@@ -1,0 +1,23 @@
+.rate-title{
+  margin-bottom: size(10)
+}
+
+.rate-button{
+  margin: size(6);
+}
+
+.rate-or{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  background-color: $color-background;
+  // &:after{
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   top: 33%;
+  //   background-color: $color-gray-5;
+  //   height: size(.1);
+  //   width: 300%;
+  // }
+}
