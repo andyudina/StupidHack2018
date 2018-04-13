@@ -1,9 +1,14 @@
 import React from 'react'
-import ScoreAction from './ScoreAction'
+import ScoreAction from 'components/rate-user/ScoreAction'
 
-const RateUserView = () => (
+const RateUserView = ({increaseRating, decreaseRating}) => (
   <div>
-    <ScoreAction />
+    <ScoreAction
+       label="Give medal"
+       onClick={increaseRating}/>
+    <ScoreAction
+       label="Give meat"
+       onClick={decreaseRating}/>
   </div>
 )
 
