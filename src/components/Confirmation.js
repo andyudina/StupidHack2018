@@ -1,15 +1,28 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
-const Confirmation = ({emoji}) => (
-  pug`
-    .row.fit-parent.confirmation-content
-      .text-center
-        h1.confirmation-icon ${emoji}
-        h3.confirmation-text Thank you for telling that person you're vegan!
-  `
-)
+class Confirmation extends React.Component{
+  componentWillMount(){
+    try {
+      this.emoji = this.props.history.location.state.emoji
+      this.copy  = this.props.history.location.state.copy
+    } catch(err) {
+      this.emoji = this.props.emoji
+      this.copy  = this.props.copy
+    }
+  }
+  render(){
+    return pug`
+      .row.column.fit-parent.confirmation-content
+        .text-center
+          h1.big-emoji ${this.emoji}
+          h3.confirmation-text ${this.copy}
+    `
+  }
+}
 Confirmation.defaultProps = {
-  emoji: '🤘'
+  emoji: '🤘',
+  copy: 'Thank you for telling that person you\'re vegan!'
 }
 
-export default Confirmation
+export default withRouter(Confirmation)
