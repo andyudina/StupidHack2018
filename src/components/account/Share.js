@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const Share = () => (
-  <div>
-    This is share
-  </div>
-)
+import ShareButton from "components/account/ShareButton";
 
-export default Share
+const Share = () => {
+  let config = {
+    'params': {
+       'text': 'text',
+       'url': 'url',
+       'title': 'title',
+    },
+    'onShareSuccess': () => {
+      window.location = '/shared-success'
+    }
+  }
+  return (
+    <ShareButton config={config} />
+  )
+}
+
+export default Share;
