@@ -1,0 +1,17 @@
+.score-button{
+  position: absolute;
+  width: size(12);
+  height: size(12);
+  top: 0;
+  opacity: 0;
+}
+
+.score-button-increase{
+  background-color: green;
+  right: 0;
+}
+
+.score-button-decrease{
+  background-color: red;
+  left: 0;
+}
