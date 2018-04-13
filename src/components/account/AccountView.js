@@ -5,13 +5,16 @@ import Share from 'components/account/Share'
 import Button from 'components/Button'
 
 
-const AccountView = () => (
-  <div>
-    <ProfileInfo />
-    <ScoreTable />
-    <Share />
-    <Button />
-  </div>
-)
+const AccountView = () => {
+  return pug`
+    .row
+      .col-xs-12
+        .box
+          ProfileInfo
+          ScoreTable
+          Share
+          Button
+  `
+}
 
 export default AccountView
