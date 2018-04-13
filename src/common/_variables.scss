@@ -1,0 +1,25 @@
+$screen-xs: 0;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+
+$z-index-map: ();
+
+$font-path: '../assets/fonts';
+$font-family-celias: "Celias","Avant Garde",Avantgarde,"Century Gothic",CenturyGothic,"AppleGothic",sans-serif;
+$font-family-celias-weights: (
+  'Hairline':  100,
+  'Thin':      200,
+  'Light':     300,
+  'Regular':   400,
+  'Medium':    500,
+  'Bold':      700,
+  'Black':     900
+  );
+
+$color-background: hsl(0,0%,97.5%);
+$color-text:       hsl(0,0%,35%);
+
+$grid-step: 0.8; // 8px
+$baseline-grid-step: $grid-step / 2;
+$heading-line-height-multiplier: 1;

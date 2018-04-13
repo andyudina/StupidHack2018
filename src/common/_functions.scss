@@ -1,0 +1,162 @@
+@function size($size, $grid: $grid-step){
+  @return $size * $grid * 1rem;
+}
+@function z-map($key){
+  @if map-has-key($z-index-map, $key){
+    @return map-get($z-index-map, $key);
+  }
+  @warn "Requested z-index of '#{$key}', which doesn't exist in $z-index-map. Not impressed.";
+  @return null;
+}
+@function normalize-size($size, $grid: $grid-step, $round: 'round'){
+  $grid-units-per-size: strip-unit($size) / $grid;
+  $normalized-size: '';
+  @if $round == up {
+    $normalized-size: ceil($grid-units-per-size);
+  } @else if $round == down {
+    $normalized-size: floor($grid-units-per-size);
+  } @else {
+    $normalized-size: round($grid-units-per-size);
+  }
+  @return size($normalized-size, $grid);
+}
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+@function calc-line-height($type-size, $ratio: 1.2){
+  $raw-line-height: $type-size * $ratio;
+  $raw-line-height-in-baselines: strip-unit($raw-line-height) / $baseline-grid-step;
+  $multiplier: round($raw-line-height-in-baselines)/2;
+  @return size($multiplier);
+}
+
+@mixin font-face-generate-single($family, $filename, $weight, $style){
+  @font-face{
+    font-family: $family;
+    src: url('#{$font-path}/#{$filename}.eot');
+    src: url('#{$font-path}/#{$filename}.eot?#iefix') format('embedded-opentype'),
+      url('#{$font-path}/#{$filename}.woff2') format('woff2'),
+      url('#{$font-path}/#{$filename}.woff') format('woff'),
+      url('#{$font-path}/#{$filename}.ttf') format('truetype'),
+      url('#{$font-path}/#{$filename}.svg#../fonts/#{$filename}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin font-face-generate-family($family-name, $family-list){
+  @each $weight-name, $weight in $family-list {
+    $filename-roman: '#{$family-name}-#{$weight-name}';
+    $filename-italic: '#{$family-name}-#{$weight-name}Italic';
+    @include font-face-generate-single($family-name, $filename-roman, $weight, normal);
+    @include font-face-generate-single($family-name, $filename-italic, $weight, italic);
+  }
+}
+
+$min: min-width;
+$max: max-width;
+
+@mixin media-query($constraint, $viewport1, $viewport2: null){
+    @if $constraint == $min {
+        @media screen and ($min: $viewport1) {
+            @content;
+        }
+    }
+
+    @else if $constraint == $max {
+        @media screen and ($max: $viewport1) {
+            @content;
+        }
+    }
+
+    @else {
+        @media screen and ($min: $viewport1) and ($max: $viewport2) {
+            @content;
+        }
+    }
+}
+@mixin responsive-class($selectors, $viewport-name, $viewport1, $viewport2: null, $constraint: null) {
+  $selector-list: ();
+  @if type-of($selectors) != string{
+    @each $selector in $selectors{
+      $selector-list: append($selector-list, #{unquote($selector)}-appliedon-#{$viewport-name}, comma);
+    }
+  }
+  @else{
+    $selector-list: #{$selectors}-appliedon-#{$viewport-name};
+  }
+  #{$selector-list}{
+    @include media-query($constraint, $viewport1, $viewport2) {
+      @content;
+    }
+  }
+}
+@mixin responsive-classes($class-name){
+  $viewport-map: (
+    sm: $screen-sm,
+    md: $screen-md,
+    lg: $screen-lg
+  );
+  #{to-string($class-name, ',')}{
+    @content;
+  }
+  @include responsive-class($class-name, 'xs', $screen-xs-max, $constraint: $max){
+    @content;
+  };
+  @include responsive-class($class-name, 'sm', $screen-sm, $screen-sm-max){
+    @content;
+  };
+  @include responsive-class($class-name, 'md', $screen-md, $screen-md-max){
+    @content;
+  };
+  @include responsive-class($class-name, 'lg', $screen-lg, $constraint: $min){
+    @content;
+  };
+}
+@mixin responsive-params($param, $viewport-map){
+  @each $viewport, $value in $viewport-map{
+    @if $viewport == 0 {
+      #{$param}: $value;
+    } @else {
+      @include media-query($min, $viewport){
+        #{$param}: $value;
+      }
+    }
+  }
+}
+@mixin modular-scale($modular-scale-settings){
+  $modularscale: ($modular-scale-settings) !global;
+  $heading-sizes: (
+    h1: ms(8),
+    h2: ms(5),
+    h3: ms(4),
+    h4: ms(3),
+    h5: ms(2),
+    h6: ms(1)
+    );
+  body{
+    font-size: ms(0);
+    line-height: calc-line-height(ms(0), 1.4);
+  }
+  p{
+    margin-bottom: normalize-size(ms(0));
+  }
+  @each $name, $value in $heading-sizes {
+    #{$name},.#{$name} {
+      font-size: $value;
+      line-height: calc-line-height($value, $heading-line-height-multiplier);
+      margin: normalize-size($baseline-grid-step * 3 * pow($value,1.15), $baseline-grid-step) 0 normalize-size(pow($value,.2), $baseline-grid-step) 0;
+    }
+  }
+}
+
+@mixin transition-attributes($attributes, $duration, $delay, $curve){
+  $output: '';
+  @each $attribute in $attributes {
+    $output: $output + "#{$attribute} #{$duration} #{$delay} #{$curve},";
+  }
+  transition: unquote($output);
+}
