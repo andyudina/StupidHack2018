@@ -2,27 +2,27 @@
 let othersRating = [
   {
     'name': 'true vegan',
-    'rating': 9002,
+    'rating': 92,
     'isMe': false
   },
   {
     'name': 'That chick',
-    'rating': 9001,
+    'rating': 91,
     'isMe': false
   },
   {
     'name': 'That guy',
-    'rating': 8999,
+    'rating': 89,
     'isMe': false
   },
   {
     'name': 'some other guy',
-    'rating': 8998,
+    'rating': 88,
     'isMe': false
   }
 ]
 
-let myDefaultRating = 9000
+let myDefaultRating = 90
 
 const getratedUserList = (othersRating, myRating) => {
   let myUser = {
