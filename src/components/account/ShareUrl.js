@@ -9,28 +9,33 @@ const ShareUrl = ({
       isCopied
   }) => {
   let style = {
-    display: isVisible? 'initial': 'none'
+    display: isVisible ? 'flex': 'none'
   }
-  let copyStyle = {
-    display: isCopied? 'initial': 'none'
-  }
+  let copyButtonText = isCopied ? 'Copied 👍': 'Copy to clipboard'
   let handleCopy = () => {
-    copy(document.getElementById("url-field").value)
+    copy(document.getElementById("url-field").innerHTML)
     onCopyToClipboard()
   }
   return pug`
-    div(style=${style})
-      input#url-field(readOnly value=url)
-      span(style=copyStyle) Copied
-      Button(
-        label="copy to clipboard"
-        onClick=handleCopy
-        )
-      Button(
-        label="OK"
-        onClick=closeUrlSharing
-        color='gray'
-        )
+  div(style=${style})
+    .fit-parent.column
+      .column-body.overflow-scroll
+        .row.column.fit-parent.confirmation-content
+          .share-url.side-padding
+            h5.share-url-title Send this link to aaall your friends
+            #url-field ${url}
+            .share-url-copy-button
+              Button(
+                label=${copyButtonText}
+                onClick=handleCopy
+                )
+            Button(
+              label="OK"
+              onClick=closeUrlSharing
+              color='gray'
+              )
+
+    .share-url-background.fit-parent(onClick=closeUrlSharing)
   `
 }
 
