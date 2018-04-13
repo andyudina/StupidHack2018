@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { browserHistory } from 'react-router';
 import Button from 'components/Button'
 
 const shareUrl = (shareUrl) => {
@@ -7,7 +8,9 @@ const shareUrl = (shareUrl) => {
     text: 'Give me a medal!',
     url: shareUrl,
   })
-  .then(_ => console.log(e, 'Successful share'))
+  .then(_ => {
+    //window.location = '/shared-success'
+  })
   .catch(error => console.log('Error sharing', error));
 }
 

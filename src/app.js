@@ -1,5 +1,4 @@
 'use strict';
-require('../vendor/navigator.js');
 
 import React    from 'react';
 import ReactDOM from 'react-dom';
