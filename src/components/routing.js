@@ -3,6 +3,10 @@ import { BrowserRouter,
          Switch,
          Route,
          Link }         from 'react-router-dom'
+import AccountView from 'components/account/AccountView'
+import SuccessfulllySharedView from 'components/account/SuccessfullySharedView'
+import RateUserView from 'components/rate-user/RateUserView'
+import SuccessfulllyRatedView from 'components/rate-user/SuccessfullyRatedView'
 
 const Routing = () => {
   return pug`
@@ -10,25 +14,14 @@ const Routing = () => {
       Switch(location=${location})
         Route(exact
               path='/'
-              component=${Home})
-        Route(path='/path'
-              component=${Path})
-  `
-}
-
-const Home = () => {
-  return pug`
-    div
-      h1 Home sweet home
-      Link(to='/path') Link
-  `
-}
-
-const Path = () => {
-  return pug`
-    div
-      h2 Hello world!
-      Link(to='/') Back
+              component=${AccountView})
+        Route(exact
+              path='/shared-success'
+              component=${SuccessfulllySharedView})
+        Route(path='/rate'
+              component=${RateUserView})
+        Route(path='/rate-success'
+              component=${SuccessfulllyRatedView})
   `
 }
 
