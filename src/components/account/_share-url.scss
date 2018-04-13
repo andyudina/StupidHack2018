@@ -1,0 +1,22 @@
+.share-url{
+  padding: size(4);
+  background-color: $color-background;
+  z-index: 9001;
+}
+
+.share-url-title{
+  margin: 0 0 size(2) 0;
+}
+
+.share-url-copy-button{
+  margin-bottom: size(1);
+}
+
+.share-url-background{
+  background: transparentize($color-gray-8, .5);
+  z-index: 9000;
+}
+
+#url-field{
+  margin: size(4) 0;
+}
