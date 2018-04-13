@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileInfo from 'components/account/ProfileInfo'
+import ProfileInfo from 'containers/account/ProfileInfo'
 import ScoreTable from 'containers/account/ScoreTable'
 import Share from 'containers/account/Share'
 
