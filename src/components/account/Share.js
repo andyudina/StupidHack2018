@@ -1,8 +1,8 @@
 import React from "react";
-
+import { withRouter } from "react-router-dom";
 import ShareButton from "components/account/ShareButton";
 
-const Share = (buttonConf) => {
+const Share = ({history}) => {
   let config = {
     'params': {
        'text': 'text',
@@ -10,12 +10,14 @@ const Share = (buttonConf) => {
        'title': 'title',
     },
     'onShareSuccess': () => {
-      window.location = '/shared-success'
+      history.push('/shared-success')
     }
   }
   return (
-    <ShareButton config={config} buttonConf={buttonConf}/>
+    <ShareButton
+       config={config}
+       label="I'm vegan"/>
   )
 }
 
-export default Share;
+export default withRouter(Share);
