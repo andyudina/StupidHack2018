@@ -1,5 +1,5 @@
-import React from 'react'
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import React  from 'react'
+import copy   from 'copy-to-clipboard';
 import Button from 'components/Button'
 
 const ShareUrl = ({
@@ -14,21 +14,23 @@ const ShareUrl = ({
   let copyStyle = {
     display: isCopied? 'initial': 'none'
   }
-  return (
-    <div style={style}>
-      <input readOnly value={url} />
-      <span style={copyStyle}>
-        Copied
-      </span>
-      <CopyToClipboard text={url}
-          onCopy={onCopyToClipboard}>
-          <button>"Copy to clipboard"</button>
-      </CopyToClipboard>
-      <Button
-         label="OK"
-         onClick={closeUrlSharing} />
-    </div>
-  )
+  let handleCopy = () => {
+    copy(document.getElementById("url-field").value)
+    onCopyToClipboard()
+  }
+  return pug`
+    div(style=${style})
+      input#url-field(readOnly value=url)
+      span(style=copyStyle) Copied
+      Button(
+        label="copy to clipboard"
+        onClick=handleCopy
+        )
+      Button(
+        label="OK"
+        onClick=closeUrlSharing
+        )
+  `
 }
 
 export default ShareUrl
