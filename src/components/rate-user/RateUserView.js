@@ -9,14 +9,14 @@ const RateUserView = ({history, increaseRating, decreaseRating}) => {
   return (
   <div>
     <ScoreAction
-       label="Give medal"
+       label="🎖️"
        onClick={
         () => {
           increaseRating();
           redirectToSuccessView();
         }}/>
     <ScoreAction
-      label="Give meat"
+      label="🥓"
       onClick={
         () => {
           decreaseRating();

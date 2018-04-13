@@ -11,7 +11,7 @@ const SuccessfullySharedView = ({history}) => {
 
   return pug`
     .fit-parent.column
-      .column-body.overflow-scroll
+      .column-body.overflow-scroll.confirmation-content-wrapper
         .side-padding.share-success-content
           Confirmation
       .column-footer
