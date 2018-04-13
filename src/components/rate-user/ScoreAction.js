@@ -1,9 +1,9 @@
 import React from 'react'
 
 const ScoreAction = ({label, onClick}) => (
-  <button onClick={onClick}>
+  <h1 onClick={onClick}>
     {label}
-  </button>
+  </h1>
 )
 
 export default ScoreAction
