@@ -1,8 +1,7 @@
 import React from 'react'
 import ProfileInfo from 'components/account/ProfileInfo'
 import ScoreTable from 'containers/account/ScoreTable'
-import Share from 'components/account/Share'
-import Button from 'components/Button'
+import Share from 'containers/account/Share'
 
 
 const AccountView = () => {
@@ -15,7 +14,7 @@ const AccountView = () => {
           Share
       .column-footer
         .box
-          Button
+          Share
   `
 }
 
