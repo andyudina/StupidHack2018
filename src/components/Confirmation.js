@@ -2,8 +2,10 @@ import React from 'react'
 
 const Confirmation = ({emoji}) => (
   pug`
-    .text-center
-      h1.share-success-icon ${emoji}
+    .row.fit-parent.confirmation-content
+      .text-center
+        h1.confirmation-icon ${emoji}
+        h3.confirmation-text Successfully shared!
   `
 )
 Confirmation.defaultProps = {

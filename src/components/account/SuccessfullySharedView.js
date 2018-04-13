@@ -9,14 +9,18 @@ const SuccessfullySharedView = ({history}) => {
     history.push('/')
   }
 
-  return (
-    <div>
-      <Confirmation />
-      <Button
-        onClick={redirectToMainPage}
-        label="OK"/>
-    </div>
-  )
+  return pug`
+    .fit-parent.column
+      .column-body.overflow-scroll
+        .side-padding.share-success-content
+          Confirmation
+      .column-footer
+        .side-padding
+          Button(
+            onClick=${redirectToMainPage}
+            label="GOODNESS GRACIOUS"
+            )
+  `
 }
 
 export default withRouter(SuccessfullySharedView)
