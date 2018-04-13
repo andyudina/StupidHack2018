@@ -29,6 +29,7 @@ const ShareUrl = ({
       Button(
         label="OK"
         onClick=closeUrlSharing
+        color='gray'
         )
   `
 }
