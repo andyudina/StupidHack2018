@@ -2,14 +2,18 @@
 
 import React    from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import Routing  from 'components/routing'
+import rootReducer from './reducers'
+
+const store = createStore(rootReducer)
 
 ReactDOM.render(
   pug`
     .large-grid
       .small-grid
-        Routing
-  `
-  ,
-  document.querySelector('#root')
+        Provider(store=${store})
+          Routing
+  `,document.querySelector('#root')
 )

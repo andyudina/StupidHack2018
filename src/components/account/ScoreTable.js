@@ -2,11 +2,22 @@ import React from 'react'
 import ScoretableRow from 'components/account/ScoretableRow'
 
 
-const ScoreTable = () => (
+const ScoreTable = ({
+    userRatingsList,
+    onIncreaseRating,
+    onDecreaseRating}) => (
   <div>
-    <ScoretableRow />
-    <ScoretableRow />
-    <ScoretableRow />
+    {userRatingsList.map(rating => (
+      <ScoretableRow
+      {...rating}
+      />
+    ))}
+    <button onClick={onIncreaseRating}>
+      Increase rating
+    </button>
+    <button onClick={onDecreaseRating}>
+      Decrease rating
+    </button>
   </div>
 )
 

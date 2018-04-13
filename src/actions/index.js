@@ -2,11 +2,10 @@ export const initiateShareLink = () => ({
   type: 'INITIATE_SHARE_LINK'
 })
 
-export const shareLink = () => ({
-  type: 'SHARE_LINK'
+export const increaseRating = () => ({
+  type: 'INCREASE_RATING'
 })
 
-export const rateUser = (ratingDiff) => ({
-  type: 'RATE_USER'
-  ratingDiff: ratingdDiff
+export const decreaseRating = () => ({
+  type: 'DECREASE_RATING'
 })

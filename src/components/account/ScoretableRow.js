@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ScoretableRow = () => (
+const ScoretableRow = ({name, rating}) => (
   <div>
-    This is score table row
+    {name}: {rating}
   </div>
 )
 

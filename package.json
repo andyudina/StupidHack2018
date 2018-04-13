@@ -46,7 +46,7 @@
     "modularscale-sass": "^3.0.5",
     "ngrok": "^2.3.0",
     "pug-cli": "^1.0.0-alpha6",
-    "react": "^16.2.0",
+    "react": "^16.3.1",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
