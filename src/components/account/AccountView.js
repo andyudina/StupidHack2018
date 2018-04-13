@@ -11,10 +11,10 @@ const AccountView = () => {
         .side-padding
           ProfileInfo
           ScoreTable
-          Share
+          Share(label="I'm vegan")
       .column-footer
         .side-padding
-          Button(label="I'm vegan")
+          Share(label="I'm vegan")
   `
 }
 
