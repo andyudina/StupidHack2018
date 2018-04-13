@@ -3,7 +3,8 @@ import { changeRateSuccessEmojiToPoop } from 'actions'
 import SuccessfullyRatedView from 'components/rate-user/SuccessfullyRatedView'
 
 const mapStateToProps = (state, ownProps) => ({
-  emoji: state.rateSuccessEmoji
+  emoji: state.rateSuccessEmoji,
+  copy: state.rateSuccessCopy,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

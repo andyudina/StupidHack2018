@@ -25,3 +25,9 @@ export const hideUrlForSharing = () => ({
 export const showCopiedMessage = () => ({
   type: 'SHOW_COPIED_MESSAGE'
 })
+
+export const setConfirmation = (emoji, copy) => ({
+  type: 'SET_CONFIRMATION',
+  emoji: emoji,
+  copy: copy,
+})

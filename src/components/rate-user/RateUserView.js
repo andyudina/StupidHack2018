@@ -2,14 +2,15 @@ import React from 'react'
 import { withRouter } from "react-router-dom";
 import ScoreAction from 'components/rate-user/ScoreAction'
 
-const RateUserView = ({history, increaseRating, decreaseRating}) => {
-  let redirectToSuccessView = (emoji, copy) => {
+const RateUserView = ({
+    history,
+    increaseRating,
+    decreaseRating,
+    setConfirmation,
+   }) => {
+  let redirectToSuccessView = () => {
     history.push({
       pathname: '/rate-success',
-      state: {
-        emoji: emoji,
-        copy:  copy
-      }
     })
   }
   return pug`
@@ -22,10 +23,11 @@ const RateUserView = ({history, increaseRating, decreaseRating}) => {
             onClick=${
             () => {
               increaseRating();
-              redirectToSuccessView(
+              redirectToSuccessView();
+              setConfirmation(
                 '🎖',
                 'And off your medal goes'
-                );
+              );
             }})
         h6.rate-or or
         .rate-button.rate-bacon
@@ -34,7 +36,8 @@ const RateUserView = ({history, increaseRating, decreaseRating}) => {
             onClick=${
             () => {
               decreaseRating();
-              redirectToSuccessView(
+              redirectToSuccessView();
+              setConfirmation(
                 '🥓',
                 'You know you\'re an awful person, right?'
                 );
