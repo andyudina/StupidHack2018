@@ -3,10 +3,12 @@ import rating from './rating'
 import shareUrl from './shareUrl'
 import rateSuccessEmoji from './rateSuccessEmoji'
 import showUrlForSharing from './showUrlForSharing'
+import showCopiedMessage from './showCopiedMessage'
 
 export default combineReducers({
   rating,
   shareUrl,
   rateSuccessEmoji,
   showUrlForSharing,
+  showCopiedMessage,
 })

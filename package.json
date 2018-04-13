@@ -59,6 +59,7 @@
     "vinyl-source-stream": "^1.1.2"
   },
   "dependencies": {
+    "react-copy-to-clipboard": "^5.0.1",
     "react-web-share-api": "0.0.2"
   }
 }

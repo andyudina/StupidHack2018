@@ -21,3 +21,7 @@ export const showUrlForSharing = () => ({
 export const hideUrlForSharing = () => ({
   type: 'HIDE_URL_FOR_SHARING'
 })
+
+export const showCopiedMessage = () => ({
+  type: 'SHOW_COPIED_MESSAGE'
+})
