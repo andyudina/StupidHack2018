@@ -1,4 +1,4 @@
-let defaultShareUrl = '/rate'
+let defaultShareUrl = 'http://' + window.location.host + '/rate'
 
 const shareUrl = (state = defaultShareUrl, action) => {
   switch (action.type) {
