@@ -7,6 +7,7 @@ const ScoreTable = ({
     onIncreaseRating,
     onDecreaseRating}) => (
   <div>
+    <span>Your score:</span>
     <div className="score-table">
       {userRatingsList.map((rating, index) => (
         <ScoretableRow
@@ -16,12 +17,12 @@ const ScoreTable = ({
       ))}
     </div>
 
-    <button onClick={onIncreaseRating}>
-      Increase rating
-    </button>
-    <button onClick={onDecreaseRating}>
-      Decrease rating
-    </button>
+    <div className="score-button score-button-increase"
+         onClick={onIncreaseRating}>
+    </div>
+    <div className="score-button score-button-decrease"
+         onClick={onDecreaseRating}>
+    </div>
   </div>
 )
 
