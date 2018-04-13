@@ -5,7 +5,7 @@ const Confirmation = ({emoji}) => (
     .row.fit-parent.confirmation-content
       .text-center
         h1.confirmation-icon ${emoji}
-        h3.confirmation-text Successfully shared!
+        h3.confirmation-text Thank you for telling that person you're vegan!
   `
 )
 Confirmation.defaultProps = {

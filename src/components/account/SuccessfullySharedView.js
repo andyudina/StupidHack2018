@@ -18,7 +18,7 @@ const SuccessfullySharedView = ({history}) => {
         .side-padding
           Button(
             onClick=${redirectToMainPage}
-            label="GOODNESS GRACIOUS"
+            label="Feels good man"
             )
   `
 }
