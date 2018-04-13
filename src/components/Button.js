@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Button = ({ label }) => (
+const Button = ({ label, onClick }) => (
   pug`
-    .button ${label}
+    .button(onClick=${onClick}) ${label}
   `
 )
+
 Button.defaultProps = {
   label: 'label'
 }

@@ -58,5 +58,7 @@
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^1.1.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-web-share-api": "0.0.2"
+  }
 }
