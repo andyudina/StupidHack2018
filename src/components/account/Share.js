@@ -2,13 +2,11 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import ShareButton from "components/account/ShareButton";
 
-const Share = ({history, url}) => {
-  let urlWithDomain = 'http://' + window.location.host + (url || '')
-
+const Share = ({history, url, showUrl}) => {
   let config = {
     'params': {
        'text': "Hey, I'm vegan",
-       'url': urlWithDomain,
+       'url': url,
        'title': "Hey, I'm Vegan! Give me a medal!",
     },
     'onShareSuccess': () => {
@@ -18,6 +16,7 @@ const Share = ({history, url}) => {
   return (
     <ShareButton
        config={config}
+       showUrl={showUrl}
        label="I'm vegan"/>
   )
 }
