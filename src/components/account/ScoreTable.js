@@ -6,24 +6,23 @@ const ScoreTable = ({
     userRatingsList,
     onIncreaseRating,
     onDecreaseRating}) => (
-  <div>
-    <span>Your score:</span>
-    <div className="score-table">
-      {userRatingsList.map((rating, index) => (
-        <ScoretableRow
-          key={index}
-          {...rating}
-          />
-      ))}
-    </div>
-
-    <div className="score-button score-button-increase"
-         onClick={onIncreaseRating}>
-    </div>
-    <div className="score-button score-button-decrease"
-         onClick={onDecreaseRating}>
-    </div>
-  </div>
+  pug`
+    div
+      span.score-table-hint Your score:
+      .score-table.
+        ${userRatingsList.map((rating, index) => (
+          <ScoretableRow
+            key={index}
+            {...rating}
+            />
+        ))}
+      .score-button.score-button-increase(
+        onClick=${onIncreaseRating}
+        )
+      .score-button.score-button-decrease(
+        onClick=${onDecreaseRating}
+        )
+  `
 )
 
 export default ScoreTable
