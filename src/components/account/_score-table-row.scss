@@ -1,0 +1,18 @@
+$score-table-row-padding: 1;
+$score-table-row-padding-top: $score-table-row-padding + .2;
+$score-table-row-padding-bottom: $score-table-row-padding - .2;
+.score-table-row-wrapper{
+  padding: size($score-table-row-padding-top) 0 size($score-table-row-padding-bottom);
+  &+&{
+    border-top: size(.1) dotted $color-gray-3;
+    padding-top: size($score-table-row-padding-top - .1);
+  }
+}
+
+.score-table-row{
+  min-height: size(4);
+}
+
+.score-table-row-score{
+  font-weight: 600;
+}

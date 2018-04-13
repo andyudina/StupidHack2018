@@ -8,13 +8,13 @@ const AccountView = () => {
   return pug`
     .fit-parent.column
       .column-body.overflow-scroll
-        .box
+        .side-padding
           ProfileInfo
           ScoreTable
           Share
       .column-footer
-        .box
-          Share
+        .side-padding
+          Button(label="I'm vegan")
   `
 }
 

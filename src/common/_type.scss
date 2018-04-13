@@ -6,7 +6,7 @@ html{
 
 body{
   font-family: $font-family-celias;
-  font-weight: 300;
+  font-weight: 400;
   color: $color-text;
 }
 button{
@@ -45,6 +45,10 @@ a{
   color: inherit;
   text-decoration: none;
   border-bottom: size(.1) dotted $color-text;
+}
+
+.tabular{
+  font-feature-settings: 'tnum';
 }
 
 .text-center{
