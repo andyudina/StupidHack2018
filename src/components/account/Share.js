@@ -2,7 +2,7 @@ import React from "react";
 
 import ShareButton from "components/account/ShareButton";
 
-const Share = () => {
+const Share = (buttonConf) => {
   let config = {
     'params': {
        'text': 'text',
@@ -14,7 +14,7 @@ const Share = () => {
     }
   }
   return (
-    <ShareButton config={config} />
+    <ShareButton config={config} buttonConf={buttonConf}/>
   )
 }
 

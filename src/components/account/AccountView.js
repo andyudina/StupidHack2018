@@ -11,10 +11,10 @@ const AccountView = () => {
         .box
           ProfileInfo
           ScoreTable
-          Share
+          Share(label='Im VEGAAN')
       .column-footer
         .box
-          Share
+          Share(label='Im VEGAAN')
   `
 }
 
