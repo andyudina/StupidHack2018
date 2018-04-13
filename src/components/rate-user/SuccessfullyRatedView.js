@@ -3,11 +3,13 @@ import Confirmation from 'components/Confirmation'
 import Button from 'components/Button'
 
 
-const SuccessfullyRatedView = () => (
-  <div>
-    <Confirmation />
-    <Button />
-  </div>
+const SuccessfullyRatedView = ({emoji, onClick}) => (
+    <div>
+      <Confirmation emoji={emoji}/>
+      <Button
+        label="OK"
+        onClick={onClick}/>
+    </div>
 )
 
 export default SuccessfullyRatedView

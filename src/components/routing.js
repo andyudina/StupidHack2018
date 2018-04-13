@@ -6,7 +6,7 @@ import { BrowserRouter,
 import AccountView from 'components/account/AccountView'
 import SuccessfulllySharedView from 'components/account/SuccessfullySharedView'
 import RateUserView from 'containers/rate-user/RateUserView'
-import SuccessfulllyRatedView from 'components/rate-user/SuccessfullyRatedView'
+import SuccessfulllyRatedView from 'containers/rate-user/SuccessfullyRatedView'
 
 const Routing = () => {
   return pug`
