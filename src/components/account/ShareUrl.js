@@ -7,7 +7,7 @@ const ShareUrl = ({url, isVisible, closeUrlSharing}) => {
   }
   return (
     <div style={style}>
-      <input value={url} />
+      <input readOnly value={url} />
       <Button
          label="OK"
          onClick={closeUrlSharing} />
