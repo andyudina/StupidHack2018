@@ -1,0 +1,74 @@
+$small-grid-color: hsla(0,0,0,.05);
+$large-grid-color: hsla(0,0,0,.1);
+.large-grid,
+.small-grid{
+  &:before,
+  &:after{
+    display: block;
+    content: " ";
+    pointer-events: none;
+    position: absolute;
+    z-index: 99999999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: top left;
+  }
+}
+.large-grid{
+  &:before,
+  &:after{
+    background-size: size(4) size(4);
+  }
+  &:before{
+    background-image: repeating-linear-gradient(
+      0deg,
+      $large-grid-color,
+      $large-grid-color .99%,
+      transparent 1%,
+      transparent 100%
+    );
+  }
+  &:after{
+    background-image: repeating-linear-gradient(
+      90deg,
+      $large-grid-color,
+      $large-grid-color .99%,
+      transparent 1%,
+      transparent 100%
+    );
+  }
+}
+.small-grid{
+  &:before,
+  &:after{
+    background-size: size(.5) size(.5);
+  }
+  &:before{
+    background-image: repeating-linear-gradient(
+      0deg,
+      $small-grid-color,
+      $small-grid-color 9.9%,
+      transparent 10%,
+      transparent 100%
+    );
+  }
+  &:after{
+    background-image: repeating-linear-gradient(
+      90deg,
+      $small-grid-color,
+      $small-grid-color 9.9%,
+      transparent 10%,
+      transparent 100%
+    );
+  }
+}
+
+.fit-parent{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
