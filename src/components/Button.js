@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Button = () => (
+const Button = ({ label }) => (
   pug`
-    .button Button Label
+    .button ${label}
   `
 )
+Button.defaultProps = {
+  label: 'label'
+}
 
 export default Button
