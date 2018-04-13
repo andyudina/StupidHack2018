@@ -1,13 +1,22 @@
 import React from 'react'
+import { withRouter } from "react-router-dom";
 import Confirmation from 'components/Confirmation'
 import Button from 'components/Button'
 
 
-const SuccessfullySharedView = () => (
-  <div>
-    <Confirmation />
-    <Button />
-  </div>
-)
+const SuccessfullySharedView = ({history}) => {
+  let redirectToMainPage =  () => {
+    history.push('/')
+  }
 
-export default SuccessfullySharedView
+  return (
+    <div>
+      <Confirmation />
+      <Button
+        onClick={redirectToMainPage}
+        label="OK"/>
+    </div>
+  )
+}
+
+export default withRouter(SuccessfullySharedView)
