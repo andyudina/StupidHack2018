@@ -64,11 +64,26 @@ $large-grid-color: hsla(0,0,0,.1);
     );
   }
 }
-
+.overflow-scroll{
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
 .fit-parent{
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+}
+.column-body{
+  flex-grow: 1;
+  flex-shrink: 2;
+}
+.column-footer{
+  flex-grow: 0;
+  flex-shrink: 0;
 }
