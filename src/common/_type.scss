@@ -1,0 +1,58 @@
+@include font-face-generate-family('Celias', $font-family-celias-weights);
+
+html{
+  font-size: 62.5%; // 1rem == 10px
+}
+
+body{
+  font-family: $font-family-celias;
+  font-weight: 300;
+  color: $color-text;
+}
+button{
+  font-family: $font-family-celias;
+}
+
+p{
+  margin: 0;
+}
+
+ h1, h2, h3, h4, h5, h6,
+.h1,.h2,.h3,.h4,.h5,.h6{
+  letter-spacing: .06em;
+  font-weight: 500;
+  text-transform: uppercase;
+  hyphens: auto;
+}
+
+$responsive-typography: (
+  $screen-xs: (base: 1.3rem, ratio: 1.17),
+  $screen-sm: (base: 1.4rem, ratio: 1.2),
+  $screen-md: (base: 1.4rem, ratio: 1.25)
+  );
+
+@each $viewport, $values in $responsive-typography {
+  @if $viewport == 0 {
+    @include modular-scale($values);
+  } @else {
+    @include media-query($min, $viewport){
+      @include modular-scale($values);
+    }
+  }
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: size(.1) dotted $color-text;
+}
+
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.text-left{
+  text-align: left;
+}
