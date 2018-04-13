@@ -3,10 +3,10 @@ import { BrowserRouter,
          Switch,
          Route,
          Link }         from 'react-router-dom'
-import AccountView from './account/AccountView'
-import SuccessfulllySharedView from './account/SuccessfullySharedView'
-import RateUserView from './rate-user/RateUserView'
-import SuccessfulllyRatedView from './rate-user/SuccessfullyRatedView'
+import AccountView from 'components/account/AccountView'
+import SuccessfulllySharedView from 'components/account/SuccessfullySharedView'
+import RateUserView from 'components/rate-user/RateUserView'
+import SuccessfulllyRatedView from 'components/rate-user/SuccessfullyRatedView'
 
 const Routing = () => {
   return pug`

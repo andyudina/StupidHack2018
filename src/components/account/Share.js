@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const Share = () => (
   <div>
     This is share

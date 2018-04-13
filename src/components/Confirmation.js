@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const Confirmation = () => (
   <div>
     This is confirmation

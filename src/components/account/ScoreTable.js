@@ -1,5 +1,5 @@
 import React from 'react'
-import ScoretableRow from './ScoretableRow'
+import ScoretableRow from 'components/account/ScoretableRow'
 
 
 const ScoreTable = () => (

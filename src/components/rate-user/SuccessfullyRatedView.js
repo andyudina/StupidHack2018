@@ -1,6 +1,6 @@
 import React from 'react'
-import Confirmation from '../Confirmation'
-import Button from '../Button'
+import Confirmation from 'components/Confirmation'
+import Button from 'components/Button'
 
 
 const SuccessfullyRatedView = () => (
