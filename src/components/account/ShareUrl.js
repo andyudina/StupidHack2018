@@ -18,7 +18,7 @@ const ShareUrl = ({
   }
   return pug`
   div(style=${style})
-    .fit-parent.column
+    .fit-parent.column.share-url-wrapper
       .column-body.overflow-scroll
         .row.column.fit-parent.confirmation-content
           .share-url.side-padding
@@ -35,7 +35,7 @@ const ShareUrl = ({
               color='gray'
               )
 
-    .share-url-background.fit-parent(onClick=closeUrlSharing)
+          .share-url-background.fit-parent(onClick=closeUrlSharing)
   `
 }
 
