@@ -101,6 +101,7 @@ gulp.task('browser-sync', function() {
       baseDir: dir.dist.root,
       middleware: [ historyApi() ]
     },
+    ghostMode: false,
     scrollElements: ['.project-body-content']
   }, function(err,bs){
     ngrok.connect(bs.options.get('port'), function(err,url){
