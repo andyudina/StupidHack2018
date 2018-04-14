@@ -7,7 +7,7 @@ let othersRating = []
 for (var i = numberOfOthers - 1; i >= 0; i--) {
   othersRating.push({
     'name': faker.name.findName(),
-    'rating': faker.random.number({min:80, max:120}),
+    'rating': faker.random.number({min:myDefaultRating-30, max:myDefaultRating+30}),
     'isMe': false
   })
 }
