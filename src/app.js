@@ -11,9 +11,10 @@ const store = createStore(rootReducer)
 
 ReactDOM.render(
   pug`
-    .large-grid
-      .small-grid
-        Provider(store=${store})
-          Routing
+    div
+      // .large-grid
+      // .small-grid
+      Provider(store=${store})
+        Routing
   `,document.querySelector('#root')
 )
