@@ -1,28 +1,16 @@
-
-let othersRating = [
-  {
-    'name': 'true vegan',
-    'rating': 92,
-    'isMe': false
-  },
-  {
-    'name': 'That chick',
-    'rating': 91,
-    'isMe': false
-  },
-  {
-    'name': 'That guy',
-    'rating': 89,
-    'isMe': false
-  },
-  {
-    'name': 'some other guy',
-    'rating': 88,
-    'isMe': false
-  }
-]
+import faker from 'faker';
 
 let myDefaultRating = 90
+
+let numberOfOthers = 30
+let othersRating = []
+for (var i = numberOfOthers - 1; i >= 0; i--) {
+  othersRating.push({
+    'name': faker.name.findName(),
+    'rating': faker.random.number({min:80, max:120}),
+    'isMe': false
+  })
+}
 
 const getratedUserList = (othersRating, myRating) => {
   let myUser = {
