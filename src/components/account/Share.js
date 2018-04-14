@@ -5,7 +5,7 @@ import ShareButton from "components/account/ShareButton";
 const Share = ({history, url, showUrl}) => {
   let config = {
     'params': {
-       'text': "Hey, I'm vegan",
+       'text': "Hey, I'm Vegan! Give me a medal",
        'url': url,
        'title': "Hey, I'm Vegan! Give me a medal!",
     },

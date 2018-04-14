@@ -7,7 +7,9 @@ const mapStateToProps = (state, ownProps) => ({})
 const mapDispatchToProps = (dispatch, ownProps) => ({
   increaseRating: () => dispatch(increaseRating()),
   decreaseRating: () => dispatch(decreaseRating()),
-  setConfirmation: (emoji, copy) => dispatch(setConfirmation(emoji, copy)),
+  setConfirmation: (emoji, copy) => {
+    dispatch(setConfirmation(emoji, copy));
+  },
 })
 
 export default connect(

@@ -19,28 +19,28 @@ const RateUserView = ({
         h5.rate-title Yep, that guy is vegan. Would you give:
         .rate-button.rate-medal
           ScoreAction(
-            label='🎖'
+            emoji='🎖'
             onClick=${
             () => {
               increaseRating();
-              redirectToSuccessView();
               setConfirmation(
                 '🎖',
                 'And off your medal goes'
               );
+              redirectToSuccessView();
             }})
         h6.rate-or or
         .rate-button.rate-bacon
           ScoreAction(
-            label='🥓'
+            emoji='🥓'
             onClick=${
             () => {
               decreaseRating();
-              redirectToSuccessView();
               setConfirmation(
                 '🥓',
                 'You know you\'re an awful person, right?'
                 );
+              redirectToSuccessView();
             }})
   `
 }

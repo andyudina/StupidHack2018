@@ -10,6 +10,7 @@ export default combineReducers({
   rating,
   shareUrl,
   rateSuccessEmoji,
+  rateSuccessCopy,
   showUrlForSharing,
   showCopiedMessage,
 })

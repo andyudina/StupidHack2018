@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import Emoji from 'components/Emoji'
 
 class Confirmation extends React.Component{
 
@@ -7,7 +8,8 @@ class Confirmation extends React.Component{
     return pug`
       .row.column.fit-parent.confirmation-content
         .text-center
-          h1.big-emoji ${this.props.emoji}
+          h1.big-emoji
+            Emoji(emoji=${this.props.emoji})
           h3.confirmation-text ${this.props.copy}
     `
   }

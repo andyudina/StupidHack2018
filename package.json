@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "react-copy-to-clipboard": "^5.0.1",
-    "react-web-share-api": "0.0.2"
+    "react-web-share-api": "0.0.2",
+    "twemoji": "^2.5.1"
   }
 }

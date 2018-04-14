@@ -1,10 +1,11 @@
 import React from 'react'
-
-const ScoreAction = ({label, onClick}) => (
+import Emoji from 'components/Emoji'
+const ScoreAction = ({emoji, onClick}) => (
   pug`
     h1.big-emoji(
       onClick=${onClick}
-    ) ${label}
+    )
+      Emoji(emoji=${emoji})
   `
 )
 
